@@ -569,8 +569,8 @@
 
 <script>
   /* ================= CONFIG ================= */
-  // Link de download da versão BÁSICA / Lite (zip com OVERISE.exe + OVERISE_DATA.zip)
-  const DOWNLOAD_URL = "https://www.mediafire.com/file/m5sz0rggd7l7g82/OVERISE_LITE%25282%2529.zip/file";
+  // Link de download da versão BÁSICA (GitHub Releases — link permanente, é só subir nova versão)
+  const DOWNLOAD_URL = "https://github.com/overisedev/apps/releases/latest/download/OVERISE_BASICO.zip";
   // Loja para upgrade ao Plano Avançado
   const UPGRADE_URL  = "https://overisestore.com.br";
 
@@ -613,7 +613,9 @@
 
   function downloadLauncher(){
     markDone(4);
-    window.open(DOWNLOAD_URL, '_blank');
+    const a = document.createElement('a');
+    a.href = DOWNLOAD_URL; a.rel = 'noopener';
+    document.body.appendChild(a); a.click(); a.remove();
   }
 
   /* ================= TOAST ================= */
