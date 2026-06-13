@@ -446,7 +446,7 @@
     <!-- INSTALAÇÃO -->
     <section class="section" id="instalacao">
       <div class="section-head">
-        <h3>Configuração em 4 passos</h3>
+        <h3>Configuração em 3 passos</h3>
         <span id="stepsSummary">Toque em um passo para ver o tutorial</span>
       </div>
       <div class="steps">
@@ -461,30 +461,20 @@
           <div class="step-state"><div class="step-check"><i class="fa-solid fa-check"></i></div><div class="step-go">➜</div></div>
         </div>
 
-        <div class="step s2" data-step="2" onclick="openModal('script')">
-          <div class="step-idx"><i class="fa-solid fa-terminal"></i></div>
-          <div class="step-body">
-            <div class="step-kicker">Passo 02 · Correção</div>
-            <h4>Remover Bugs (PowerShell)</h4>
-            <p>Evite erros de permissão com nosso script de limpeza automático.</p>
-          </div>
-          <div class="step-state"><div class="step-check"><i class="fa-solid fa-check"></i></div><div class="step-go">➜</div></div>
-        </div>
-
-        <div class="step s3" data-step="3" onclick="openModal('bypass')">
+        <div class="step s2" data-step="2" onclick="openModal('bypass')">
           <div class="step-idx"><i class="fa-solid fa-unlock"></i></div>
           <div class="step-body">
-            <div class="step-kicker">Passo 03 · Opcional</div>
+            <div class="step-kicker">Passo 02 · Opcional</div>
             <h4>Instalar Bypass (Denuvo)</h4>
             <p>Necessário apenas para títulos específicos Online / com Denuvo.</p>
           </div>
           <div class="step-state"><div class="step-check"><i class="fa-solid fa-check"></i></div><div class="step-go">➜</div></div>
         </div>
 
-        <div class="step s4" data-step="4" onclick="openModal('launcher')">
+        <div class="step s3" data-step="3" onclick="openModal('launcher')">
           <div class="step-idx"><i class="fa-solid fa-download"></i></div>
           <div class="step-body">
-            <div class="step-kicker">Passo 04 · Final</div>
+            <div class="step-kicker">Passo 03 · Final</div>
             <h4>Baixar o Launcher</h4>
             <p>Baixe o OVERISE e desbloqueie seus 1.000 jogos.</p>
           </div>
@@ -534,27 +524,17 @@
   </div>
 </dialog>
 
-<dialog id="modal-script">
-  <div class="modal-header"><h3>Passo 2 · Script Anti-Bug</h3><button class="modal-close" onclick="closeModal('script')">✕</button></div>
-  <div class="video-container"><iframe src="https://www.youtube.com/embed/cOUO-2fmybA" title="Remover Bugs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-  <div class="modal-body">
-    <p class="lead">Para evitar erros de <b>"Acesso Negado"</b>, execute este comando rápido:<br><br>1. Copie o código abaixo.<br>2. Menu Iniciar → digite <b>"PowerShell"</b>.<br>3. Botão direito → <b>"Executar como Administrador"</b>.<br>4. Cole o código e dê Enter.</p>
-    <div class="code" id="psCode"><i class="fa-solid fa-terminal"></i> irm steam.run | iex</div>
-    <button class="mbtn copy" onclick="copyCode()"><i class="fa-solid fa-copy"></i> Copiar código agora</button>
-  </div>
-</dialog>
-
 <dialog id="modal-bypass">
-  <div class="modal-header"><h3>Passo 3 · Instalar Bypass</h3><button class="modal-close" onclick="closeModal('bypass')">✕</button></div>
+  <div class="modal-header"><h3>Passo 2 · Instalar Bypass</h3><button class="modal-close" onclick="closeModal('bypass')">✕</button></div>
   <div class="video-container"><iframe src="https://www.youtube.com/embed/aqB-Ronajp0" title="Instalar Bypass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
   <div class="modal-body">
     <p class="lead">Necessário apenas para jogar títulos específicos em modo Online ou que utilizam Denuvo.<br><br>1. Clique no botão abaixo para acessar o gerador.<br>2. Siga as instruções do site.</p>
-    <a href="https://generator.ryuu.lol/fixes" target="_blank" class="mbtn bypass" onclick="markDone(3)"><i class="fa-solid fa-unlock"></i> Acessar site Bypass</a>
+    <a href="https://generator.ryuu.lol/fixes" target="_blank" class="mbtn bypass" onclick="markDone(2)"><i class="fa-solid fa-unlock"></i> Acessar site Bypass</a>
   </div>
 </dialog>
 
 <dialog id="modal-launcher">
-  <div class="modal-header"><h3>Passo 4 · Instalar o Launcher</h3><button class="modal-close" onclick="closeModal('launcher')">✕</button></div>
+  <div class="modal-header"><h3>Passo 3 · Instalar o Launcher</h3><button class="modal-close" onclick="closeModal('launcher')">✕</button></div>
   <div class="video-container"><iframe src="https://www.youtube.com/embed/CfldgBewzV8" title="Instalar Launcher" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
   <div class="modal-body">
     <p class="lead">Agora instale o app <b>OVERISE</b> (plano Básico):<br><br>1. Baixe e <b>extraia</b> o ZIP (deixe o <b>OVERISE_DATA.zip na mesma pasta</b> do .exe).<br>2. Execute o <b>"OVERISE.exe"</b>.<br>3. Entre com o <b>email da sua compra</b>.<br>4. Clique em <b>"Desbloquear"</b> — o app instala tudo e libera seus jogos.</p>
@@ -574,7 +554,7 @@
   // Loja para upgrade ao Plano Avançado
   const UPGRADE_URL  = "https://overisestore.com.br";
 
-  const TOTAL_STEPS = 4;
+  const TOTAL_STEPS = 3;
   const STORAGE_KEY = "overise_basico_steps_v1";
 
   /* ================= MODAIS ================= */
@@ -606,13 +586,8 @@
   }
 
   /* ================= AÇÕES ================= */
-  function copyCode(){
-    const txt = "irm steam.run | iex";
-    navigator.clipboard.writeText(txt).then(() => { markDone(2); toast("Código copiado!"); });
-  }
-
   function downloadLauncher(){
-    markDone(4);
+    markDone(3);
     const a = document.createElement('a');
     a.href = DOWNLOAD_URL; a.rel = 'noopener';
     document.body.appendChild(a); a.click(); a.remove();
